@@ -1,0 +1,21 @@
+name: On Pull Request
+
+on: [pull_request]
+
+jobs: 
+  tests:
+    name: Setup Application
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 
+
+      - name: Install node.js (lastest version)
+        uses: actions/setup-node@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Test
+        run: npm run test  
