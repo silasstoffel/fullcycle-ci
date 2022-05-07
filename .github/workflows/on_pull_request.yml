@@ -20,6 +20,13 @@ jobs:
       - name: Run Test
         run: npm run test
 
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: |
+            ${{ github.workspace }}/coverage        
+
   code-scan: 
     name: Sonar Cloud
     runs-on: ubuntu-latest
@@ -30,14 +37,11 @@ jobs:
         with:
           fetch-depth: 0  
 
-      - name: Install node.js (lastest version)
-        uses: actions/setup-node@v3
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Test
-        run: npm run test
+      - name: Download coverage artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage
+          path: coverage
    
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
