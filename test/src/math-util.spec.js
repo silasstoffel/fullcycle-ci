@@ -12,4 +12,17 @@ describe("MathUtil", () => {
         });
     });
 
+    describe("when multiply", () => {
+        it('should be able to sum two numbers', () => {
+            expect(mathUtil.multiplyArray([5, 5, 4])).toBe(100);
+        });
+    });
+    
+    describe("when sub", () => {
+        it('should be able to subtract two numbers', () => {
+            expect(mathUtil.sub(100, 80)).toBe(20);
+            expect(mathUtil.sub(100, 150)).toBe(-150);
+        });
+    });
+
 });
