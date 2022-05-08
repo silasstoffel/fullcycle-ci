@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/alive', (req, res) => {
+router.get('/alive', (_req, res) => {
     res.status(200).json({
         message: 'app is Alive'
     });
