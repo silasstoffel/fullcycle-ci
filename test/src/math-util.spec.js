@@ -21,7 +21,7 @@ describe("MathUtil", () => {
     describe("when sub", () => {
         it('should be able to subtract two numbers', () => {
             expect(mathUtil.sub(100, 80)).toBe(20);
-            expect(mathUtil.sub(100, 150)).toBe(-150);
+            expect(mathUtil.sub(100, 150)).toBe(-50);
         });
     });
 
