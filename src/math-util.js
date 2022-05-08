@@ -24,3 +24,5 @@ class MathUtil {
         return value;
     }
 }
+
+module.exports = new MathUtil();
