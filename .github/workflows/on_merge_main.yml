@@ -1,7 +1,9 @@
-name: On Pull Request
+name: Merged PR 
 
-on: [pull_request]
-
+on:
+ push:
+   branches:
+     - main
 jobs: 
   tests:
     name: Tests
