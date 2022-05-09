@@ -4,5 +4,3 @@ const routes = require('./routes');
 const port = 3009;
 
 createServer(routes, port, true);
-
-
